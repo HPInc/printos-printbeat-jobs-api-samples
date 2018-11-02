@@ -1,0 +1,1 @@
+C:\git\partners\github_jobs\c#\Jobs\bin\Release\Jobs.exe.config
