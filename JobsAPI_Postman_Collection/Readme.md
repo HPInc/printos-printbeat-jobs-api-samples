@@ -17,4 +17,5 @@ The Postman application can be downloaded here: https://www.getpostman.com/
 - A Pre-request Script inside the collection uses the CryptoJS library to dynamically generate the authentication HMAC.
 - This Pre-request Script may also set some necessary environment variables which are used in the HTTP Headers section for each call.
 - The response field can be used to capture response JSON messages from the Jobs API calls.
+
 **NOTE:** Some of the API calls are dependant on certain environment variables being set to valid values in your environment.  Make sure they are defined correctly if errors occur.
