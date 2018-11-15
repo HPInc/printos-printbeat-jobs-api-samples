@@ -4,8 +4,15 @@
 
 Code was written in Ruby 2.3.1
 
+Two different executables exist depending on what you are trying to do:
+- retrieve_jobs.rb - basic call showing how to collect job data over the Jobs API
+- work_time_estimate - calculates a work time estimate of the presses each 5 minutes
+
 ## How To Run / Program Information
 
-Run on the command line using ```ruby jobs_api.rb```
+Before you can run the code, you need to provide the Key/Secret in retrieve_jobs.rb.  
 
-Before you can run the code, you need to provide the Key/Secret. There are two baseUrls provided. Uncomment the one that your Key/Secret was created/provided in.
+You may also need to configure a web proxy in the jobs_api.rb file by uncommenting and modifying the proxy definition
+
+Run on the command line using ```ruby retrieve_jobs.rb```
+
