@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3faa1679-f295-453a-8b1c-b8fff7164e2e",
+		"_postman_id": "fcb17eeb-bb6d-4ce2-a0c1-47a740dc225a",
 		"name": "Jobs API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -62,12 +62,8 @@
 								"value": "{{timestamp}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{}"
-						},
 						"url": {
-							"raw": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}?device={{deviceid}}",
+							"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?device={{deviceid}}",
 							"protocol": "https",
 							"host": [
 								"daily",
@@ -146,12 +142,8 @@
 								"value": "{{timestamp}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{}"
-						},
 						"url": {
-							"raw": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}?devices={{deviceid}}&properties=location,locationType,marker,queueOrderIndex,jobWorkTimeEstimate",
+							"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?devices={{deviceid}}&properties=location,locationType,marker,queueOrderIndex,jobWorkTimeEstimate",
 							"protocol": "https",
 							"host": [
 								"daily",
@@ -236,10 +228,6 @@
 						"value": "{{timestamp}}"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{}"
-				},
 				"url": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}"
 			},
 			"response": []
@@ -329,12 +317,8 @@
 						"value": "{{timestamp}}"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{}"
-				},
 				"url": {
-					"raw": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}?startMarker={{marker}}",
+					"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?startMarker={{marker}}",
 					"protocol": "https",
 					"host": [
 						"daily",
@@ -428,10 +412,6 @@
 						"value": "{{timestamp}}"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{}"
-				},
 				"url": "{{SmsHost}}/jobs-service/jobs-sdk/propertyspecs"
 			},
 			"response": []
@@ -487,10 +467,6 @@
 						"value": "{{timestamp}}"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{}"
-				},
 				"url": "{{SmsHost}}/jobs-service/jobs-sdk/status"
 			},
 			"response": []
