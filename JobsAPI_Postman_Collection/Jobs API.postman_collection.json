@@ -67,7 +67,7 @@
 							"raw": "{}"
 						},
 						"url": {
-							"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?device={{deviceid}}",
+							"raw": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}?device={{deviceid}}",
 							"protocol": "https",
 							"host": [
 								"daily",
@@ -151,7 +151,7 @@
 							"raw": "{}"
 						},
 						"url": {
-							"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?devices={{deviceid}}&properties=location,locationType,marker,queueOrderIndex,jobWorkTimeEstimate",
+							"raw": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}?devices={{deviceid}}&properties=location,locationType,marker,queueOrderIndex,jobWorkTimeEstimate",
 							"protocol": "https",
 							"host": [
 								"daily",
@@ -240,7 +240,7 @@
 					"mode": "raw",
 					"raw": "{}"
 				},
-				"url": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}"
+				"url": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}"
 			},
 			"response": []
 		},
@@ -334,7 +334,7 @@
 					"raw": "{}"
 				},
 				"url": {
-					"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?startMarker={{marker}}",
+					"raw": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}?startMarker={{marker}}",
 					"protocol": "https",
 					"host": [
 						"daily",
