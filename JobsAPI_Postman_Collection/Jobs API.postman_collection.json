@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fcb17eeb-bb6d-4ce2-a0c1-47a740dc225a",
+		"_postman_id": "fd9b68c1-6c2c-430b-a17d-2190ce0ed79b",
 		"name": "Jobs API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -90,7 +90,6 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "5780ad50-b949-4a65-bea2-dd8b00e11420",
-								"type": "text/javascript",
 								"exec": [
 									"var key = postman.getEnvironmentVariable(\"key\");",
 									"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -116,7 +115,8 @@
 									"    ];",
 									"    return headers;",
 									"}"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -138,17 +138,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?devices={{deviceid}}&properties=location,locationType,marker,queueOrderIndex,jobWorkTimeEstimate",
-							"protocol": "https",
+							"raw": "{{SmsHost}}/jobs-service/jobs-sdk/jobs/{{context}}?devices={{deviceid}}&properties=location,locationType,marker,queueOrderIndex,jobWorkTimeEstimate",
 							"host": [
-								"daily",
-								"gsbprint",
-								"net"
+								"{{SmsHost}}"
 							],
 							"path": [
-								"api",
 								"jobs-service",
-								"v1",
 								"jobs-sdk",
 								"jobs",
 								"{{context}}"
@@ -234,7 +229,6 @@
 					"listen": "prerequest",
 					"script": {
 						"id": "5780ad50-b949-4a65-bea2-dd8b00e11420",
-						"type": "text/javascript",
 						"exec": [
 							"var key = postman.getEnvironmentVariable(\"key\");",
 							"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -260,14 +254,14 @@
 							"    ];",
 							"    return headers;",
 							"}"
-						]
+						],
+						"type": "text/javascript"
 					}
 				},
 				{
 					"listen": "test",
 					"script": {
 						"id": "f47d27dd-bc5b-42f2-a214-9ff9c642249b",
-						"type": "text/javascript",
 						"exec": [
 							"var responseJSON;",
 							"try {",
@@ -291,7 +285,8 @@
 							"catch (e) {}",
 							"",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -313,17 +308,12 @@
 					}
 				],
 				"url": {
-					"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?startMarker={{marker}}",
-					"protocol": "https",
+					"raw": "{{SmsHost}}/jobs-service/jobs-sdk/jobs/{{context}}?startMarker={{marker}}",
 					"host": [
-						"daily",
-						"gsbprint",
-						"net"
+						"{{SmsHost}}"
 					],
 					"path": [
-						"api",
 						"jobs-service",
-						"v1",
 						"jobs-sdk",
 						"jobs",
 						"{{context}}"
