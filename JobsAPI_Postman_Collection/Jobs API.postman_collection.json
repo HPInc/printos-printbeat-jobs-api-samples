@@ -15,7 +15,6 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "5780ad50-b949-4a65-bea2-dd8b00e11420",
-								"type": "text/javascript",
 								"exec": [
 									"var key = postman.getEnvironmentVariable(\"key\");",
 									"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -41,7 +40,8 @@
 									"    ];",
 									"    return headers;",
 									"}"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -63,17 +63,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://daily.gsbprint.net/api/jobs-service/v1/jobs-sdk/jobs/{{context}}?device={{deviceid}}",
-							"protocol": "https",
+							"raw": "{{SmsHost}}/jobs-service/jobs-sdk/jobs/{{context}}?device={{deviceid}}",
 							"host": [
-								"daily",
-								"gsbprint",
-								"net"
+								"{{SmsHost}}"
 							],
 							"path": [
-								"api",
 								"jobs-service",
-								"v1",
 								"jobs-sdk",
 								"jobs",
 								"{{context}}"
