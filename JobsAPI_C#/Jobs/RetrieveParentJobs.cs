@@ -78,8 +78,8 @@ namespace Jobs
             //Response data is returned as a stream. Reading through the stream will return json data
             Stream content = await response.Content.ReadAsStreamAsync();
             string jobsData;
-            using (var decompress = new GZipStream(content, CompressionMode.Decompress))
-            using (var sr = new StreamReader(decompress))
+            //using (var decompress = new GZipStream(content, CompressionMode.Decompress))
+            using (var sr = new StreamReader(content))
             {
                 jobsData = sr.ReadToEnd();
             }
