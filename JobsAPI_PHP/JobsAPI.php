@@ -60,7 +60,7 @@ class JobsAPI
           "x-hp-hmac-date: " . $time . "\r\n" .
           "x-hp-hmac-authentication: " . $auth . "\r\n",
         'method' => 'GET',
-		//'ignore_errors' => true,   //ignoring errors will let you capture the response JSON for invalid calls
+				//'ignore_errors' => true,   //ignoring errors will let you capture the response JSON for invalid calls
         //'proxy' => 'web-proxy:8080', // If you are operating behind a proxy, uncomment proxy and request_fulluri lines and specify the proxy address and port.
         //'request_fulluri' => true,
       ),
@@ -72,8 +72,21 @@ class JobsAPI
        $fullPath = $fullPath . '?' . $queryString;
     print("Sending GET to URL: " . $fullPath . "\n");
     $response = file_get_contents($fullPath, false, $context);
-    $data = gzdecode($response);
-    print_r($this->parseHeaders($http_response_header));
+    //check to see if the response is gzip compressed.  If so decompress...
+		$pattern = "/^content-encoding\s*:\s*(.*)$/i";
+		if (($header = preg_grep($pattern, $http_response_header)) &&
+			(preg_match($pattern, array_shift(array_values($header)), $match) !== false))
+		{
+			$content_encoding = $match[1];
+			echo "Content-Encoding is '$content_encoding'\n";
+		}
+		if (strpos($content_encoding,'gzip') > -1){
+			$data = gzdecode($response);
+		} else {
+			$data = $response;
+		}
+ 
+		print_r($this->parseHeaders($http_response_header));
     return $data;
   }
 
