@@ -74,6 +74,7 @@ class JobsAPI
     $response = file_get_contents($fullPath, false, $context);
     //check to see if the response is gzip compressed.  If so decompress...
 		$pattern = "/^content-encoding\s*:\s*(.*)$/i";
+		$content_encoding = "";
 		if (($header = preg_grep($pattern, $http_response_header)) &&
 			(preg_match($pattern, array_shift(array_values($header)), $match) !== false))
 		{
