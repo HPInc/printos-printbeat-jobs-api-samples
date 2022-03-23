@@ -26,7 +26,7 @@ class JobsAPI
   {
 
     $str = $method . ' ' . $path . $timestamp;
-    $hash = hash_hmac('sha1', $str, $this->secret);
+    $hash = hash_hmac('sha256', $str, $this->secret);
     return $this->key . ':' . $hash;
   }
 
