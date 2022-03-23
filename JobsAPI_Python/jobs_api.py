@@ -101,12 +101,12 @@ def create_headers(method, path, timestamp):
 	string_to_sign = method + ' ' + path + timestamp
 	local_secret = secret.encode('utf-8')
 	string_to_sign = string_to_sign.encode('utf-8')
-	signature = hmac.new(local_secret, string_to_sign, hashlib.sha1).hexdigest()
+	signature = hmac.new(local_secret, string_to_sign, hashlib.sha256).hexdigest()
 	auth = key + ':' + signature
 	return {'content-type': 'application/json',
 		'x-hp-hmac-authentication': auth,
 		'x-hp-hmac-date': timestamp,
-		'x-hp-hmac-algorithm' : 'SHA1'
+		'x-hp-hmac-algorithm' : 'SHA256'
 	}
 
 '''
