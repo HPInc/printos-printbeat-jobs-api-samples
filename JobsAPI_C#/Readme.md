@@ -2,7 +2,7 @@
 
 ## General Information
 
-Code was developed in Visual Studio 2015
+Code was developed in Visual Studio 2022 with .NET RunTime 4.6.2
 
 Code is implemented with three executable files:
 - RetrieveJobs.cs - standard call to collect jobs from your account
