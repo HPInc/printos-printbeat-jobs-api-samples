@@ -17,8 +17,8 @@ namespace Jobs
         private static string baseUrl = "https://printos.api.hp.com/jobs-service";        //use for production account
         //private static string baseUrl = "https://stage.printos.api.hp.com/jobs-service";    //use for staging account
 
-        private static string key = "";
-        private static string secret = "";
+        private static string key = "";   //Enter PrintOS key here
+        private static string secret = "";    //Enter PrintOS secret here
 
         private static JobComparator comparator = new JobComparator();
         private static List<Job> jobs;

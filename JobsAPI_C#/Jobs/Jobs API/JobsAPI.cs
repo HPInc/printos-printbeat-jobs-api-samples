@@ -11,11 +11,11 @@ namespace Jobs
         private static string baseUrl;
         private static HmacAuth hmacAuth;
 
-        //Enable if proxy is needed
+        //Uncomment Proxy/UseProxy lines below if using a web proxy
         private HttpClientHandler handler = new HttpClientHandler()
         {
-            Proxy = new WebProxy("web-proxy.corp.hp.com:8080"),
-            UseProxy = true,
+            //Proxy = new WebProxy("web-proxy.corp.hp.com:8080"),
+            //UseProxy = true,
         };
 
         public JobsAPI(string baseUrl, string key, string secret)
