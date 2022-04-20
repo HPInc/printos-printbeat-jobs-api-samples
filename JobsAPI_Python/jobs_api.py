@@ -13,8 +13,7 @@ baseUrl = "https://printos.api.hp.com/jobs-service"		#use for production server 
 
 key = ''  #The API Key generated from your PrintOS account for the Jobs API
 secret = ''		#The API Secret generated from your PrintOS account for the Jobs API
-
-context = 'press'	#context that Jobs API queries will be made in (e.g. 'job', 'dfe', 'press', 'printrun' or 'historic')
+context = 'historic'	#context that Jobs API queries will be made in (e.g. 'job', 'dfe', 'press', 'printrun' or 'historic')
 
 marker = None   #last marker value from previous query_jobs
 jobsList = []	#List of jobs (list of dictionaries)
