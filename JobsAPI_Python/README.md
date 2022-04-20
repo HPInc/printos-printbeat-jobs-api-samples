@@ -2,8 +2,8 @@
 
 ## General Information
 
-Code was written in Python 3.7.3
-Uses the "requests" module so that will need to be installed in order to run the code ``` > pip install requests```
+Code was written in Python 3.7.3 (Last tested with Python 3.10.4)
+Uses the "requests" module so that will need to be installed in order to run the code ``` > pip install requests```  (Last tested with requests version 2.27.1)
 
 It also uses json, hmac, hashlib, datetime, base64, string, and time modules as well. If they aren't found, you may need to install these as well.
 
