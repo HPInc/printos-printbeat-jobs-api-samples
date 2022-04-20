@@ -58,7 +58,8 @@ class JobsAPI
       'http' => array(
         'header' => "Content-Type: application/json\r\n" .
           "x-hp-hmac-date: " . $time . "\r\n" .
-          "x-hp-hmac-authentication: " . $auth . "\r\n",
+          "x-hp-hmac-authentication: " . $auth . "\r\n" .
+          "x-hp-hmac-algorithm: SHA256\r\n",
         'method' => 'GET',
 				//'ignore_errors' => true,   //ignoring errors will let you capture the response JSON for invalid calls
         //'proxy' => 'web-proxy:8080', // If you are operating behind a proxy, uncomment proxy and request_fulluri lines and specify the proxy address and port.
