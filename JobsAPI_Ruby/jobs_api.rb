@@ -40,6 +40,7 @@ module Jobs
       request = Net::HTTP::Get.new(uri)
       request.add_field("x-hp-hmac-authentication", auth)
       request.add_field("x-hp-hmac-date", timestamp)
+      request.add_field("x-hp-hmac-algorithm", "SHA256")
 
       response = Net::HTTP.start(uri.host, uri.port,
                                  :use_ssl => uri.scheme == 'https',
@@ -63,7 +64,8 @@ module Jobs
 
       request = Net::HTTP::Get.new(uri)
       request.add_field("x-hp-hmac-authentication", auth)
-      request.add_field("x-hp-hmac-date", timestamp)
+      request.add_field("x-hp-hmac-date", timestamp)      
+      request.add_field("x-hp-hmac-algorithm", "SHA256")
 
       response = Net::HTTP.start(uri.host, uri.port,
                                  :use_ssl => uri.scheme == 'https',

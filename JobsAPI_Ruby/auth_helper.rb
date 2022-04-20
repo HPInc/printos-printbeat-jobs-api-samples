@@ -10,7 +10,7 @@ module Jobs
 
     def createHmacAuth(method, path, time)
       combined = method + ' ' + path + time
-      digest = OpenSSL::Digest.new('sha1')
+      digest = OpenSSL::Digest.new('sha256')
       hmac = OpenSSL::HMAC.hexdigest(digest, @secret, combined)
       return @key + ':' + hmac
     end
@@ -18,7 +18,7 @@ module Jobs
     def CreateHmacHeaders(method, path)
       timestamp = Time.now.getutc.iso8601
       signed = createHmacAuth(method, path, timestamp)
-      headers = {:content_type => :json, 'x-hp-hmac-authentication' => signed, 'x-hp-hmac-date' => timestamp, 'x-hp-hmac-algorithm' => 'SHA1'}
+      headers = {:content_type => :json, 'x-hp-hmac-authentication' => signed, 'x-hp-hmac-date' => timestamp, 'x-hp-hmac-algorithm' => 'SHA256'}
       return headers
     end
   end
