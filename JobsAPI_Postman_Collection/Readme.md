@@ -1,17 +1,17 @@
 # Postman Collection
 ## General Information
-This is an exported collection for the Postman application (exported as a v2 Collection). It allows you to import a working set of API calls to test the functionality of the current APIs.
+This is an exported collection for the Postman application (exported as a v2.1 Collection). It allows you to import a working set of API calls to test the functionality of the current APIs.
 
 The Postman application can be downloaded here: https://www.getpostman.com/
 
 ## How To Run / Program Information
 1. Import the "Jobs API.postman_collection.json" file in the main Import dialog of Postman.
 2. Import the "Jobs API Environment.postman_environment.json" file through the Manage Environments dialog in the upper right settings menu
-3. In the Manage Environments dialog edit the environment you just imported and replace the "key" and "secret" values with the key and secret from the PrintOS account you are using. 
+3. In the Manage Environments dialog, edit the environment you just imported, and replace the "key" and "secret" values with the key and secret from the PrintOS account you are using. 
 4. Make sure the SmsHost enviroment variable is checked for the stack you are using (Production vs Staging)
 5. Click "Update" to save changes.
 6. Select the Environment you just imported in the environment drop-down menu.
-7. In the Jobs API collection in the left pane select the API call you wish to make then click the "Send" button to send the API call.
+7. In the Jobs API collection in the left pane select the API call you wish to make then click the "Send" button to send the API call.  It is recommended to start with the /propertyspecs endpoint which doesn't require devices to be setup correctly for the Jobs API.  If that call is working and the others aren't then Postman is probably working, but the Jobs API isn't configured correctly.  Please contact support in this case. 
 
 ## About the Postman collection
 - A Pre-request Script inside the collection uses the CryptoJS library to dynamically generate the authentication HMAC.

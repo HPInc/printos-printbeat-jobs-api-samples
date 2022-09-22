@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "fd9b68c1-6c2c-430b-a17d-2190ce0ed79b",
-		"name": "Jobs API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"_postman_id": "bac1425e-6d32-4a2f-8281-5f5a49e5d77c",
+		"name": "Print Beat Jobs API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10916568"
 	},
 	"item": [
 		{
@@ -14,7 +15,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5780ad50-b949-4a65-bea2-dd8b00e11420",
 								"exec": [
 									"var key = postman.getEnvironmentVariable(\"key\");",
 									"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -31,7 +31,7 @@
 									"    ",
 									"    var toSign = method.toUpperCase() + \" \" + path + timestamp;",
 									"    console.log('Creating hash with string ', toSign);",
-									"    var hash = CryptoJS.HmacSHA1(toSign, secret);",
+									"    var hash = CryptoJS.HmacSHA256(toSign, secret);",
 									"    var sig = CryptoJS.enc.Hex.stringify(hash);",
 									"    var headers = [",
 									"      key + \":\" + sig,",
@@ -60,6 +60,11 @@
 							{
 								"key": "x-hp-hmac-date",
 								"value": "{{timestamp}}"
+							},
+							{
+								"key": "x-hp-hmac-algorithm",
+								"value": "SHA256",
+								"type": "text"
 							}
 						],
 						"url": {
@@ -89,7 +94,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5780ad50-b949-4a65-bea2-dd8b00e11420",
 								"exec": [
 									"var key = postman.getEnvironmentVariable(\"key\");",
 									"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -106,7 +110,7 @@
 									"    ",
 									"    var toSign = method.toUpperCase() + \" \" + path + timestamp;",
 									"    console.log('Creating hash with string ', toSign);",
-									"    var hash = CryptoJS.HmacSHA1(toSign, secret);",
+									"    var hash = CryptoJS.HmacSHA256(toSign, secret);",
 									"    var sig = CryptoJS.enc.Hex.stringify(hash);",
 									"    var headers = [",
 									"      key + \":\" + sig,",
@@ -135,6 +139,11 @@
 							{
 								"key": "x-hp-hmac-date",
 								"value": "{{timestamp}}"
+							},
+							{
+								"key": "x-hp-hmac-algorithm",
+								"value": "SHA256",
+								"type": "text"
 							}
 						],
 						"url": {
@@ -170,8 +179,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5780ad50-b949-4a65-bea2-dd8b00e11420",
-						"type": "text/javascript",
 						"exec": [
 							"var key = postman.getEnvironmentVariable(\"key\");",
 							"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -188,7 +195,7 @@
 							"    ",
 							"    var toSign = method.toUpperCase() + \" \" + path + timestamp;",
 							"    console.log('Creating hash with string ', toSign);",
-							"    var hash = CryptoJS.HmacSHA1(toSign, secret);",
+							"    var hash = CryptoJS.HmacSHA256(toSign, secret);",
 							"    var sig = CryptoJS.enc.Hex.stringify(hash);",
 							"    var headers = [",
 							"      key + \":\" + sig,",
@@ -197,7 +204,8 @@
 							"    ];",
 							"    return headers;",
 							"}"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -216,9 +224,25 @@
 					{
 						"key": "x-hp-hmac-date",
 						"value": "{{timestamp}}"
+					},
+					{
+						"key": "x-hp-hmac-algorithm",
+						"value": "SHA256",
+						"type": "text"
 					}
 				],
-				"url": "{{SmsHost}}/jobs-service/v1/jobs-sdk/jobs/{{context}}"
+				"url": {
+					"raw": "{{SmsHost}}/jobs-service/jobs-sdk/jobs/{{context}}",
+					"host": [
+						"{{SmsHost}}"
+					],
+					"path": [
+						"jobs-service",
+						"jobs-sdk",
+						"jobs",
+						"{{context}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -228,7 +252,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5780ad50-b949-4a65-bea2-dd8b00e11420",
 						"exec": [
 							"var key = postman.getEnvironmentVariable(\"key\");",
 							"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -245,7 +268,7 @@
 							"    ",
 							"    var toSign = method.toUpperCase() + \" \" + path + timestamp;",
 							"    console.log('Creating hash with string ', toSign);",
-							"    var hash = CryptoJS.HmacSHA1(toSign, secret);",
+							"    var hash = CryptoJS.HmacSHA256(toSign, secret);",
 							"    var sig = CryptoJS.enc.Hex.stringify(hash);",
 							"    var headers = [",
 							"      key + \":\" + sig,",
@@ -261,7 +284,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f47d27dd-bc5b-42f2-a214-9ff9c642249b",
 						"exec": [
 							"var responseJSON;",
 							"try {",
@@ -305,6 +327,11 @@
 					{
 						"key": "x-hp-hmac-date",
 						"value": "{{timestamp}}"
+					},
+					{
+						"key": "x-hp-hmac-algorithm",
+						"value": "SHA256",
+						"type": "text"
 					}
 				],
 				"url": {
@@ -334,8 +361,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "19ff34ba-471a-4de3-a2c7-cbb1fffde056",
-						"type": "text/javascript",
 						"exec": [
 							"var key = postman.getEnvironmentVariable(\"key\");",
 							"var secret = postman.getEnvironmentVariable(\"secret\");",
@@ -350,7 +375,7 @@
 							"    ",
 							"    var toSign = method.toUpperCase() + \" \" + path + timestamp;",
 							"    console.log('Creating hash with string ', toSign);",
-							"    var hash = CryptoJS.HmacSHA1(toSign, secret);",
+							"    var hash = CryptoJS.HmacSHA256(toSign, secret);",
 							"    var sig = CryptoJS.enc.Hex.stringify(hash);",
 							"    var headers = [",
 							"      key + \":\" + sig,",
@@ -359,14 +384,13 @@
 							"    ];",
 							"    return headers;",
 							"}"
-						]
+						],
+						"type": "text/javascript"
 					}
 				},
 				{
 					"listen": "test",
 					"script": {
-						"id": "57b90fd2-7925-4a3b-8757-6b81c7cfb5ad",
-						"type": "text/javascript",
 						"exec": [
 							"var responseJSON;",
 							"try {",
@@ -377,7 +401,8 @@
 							"catch (e) {}",
 							"",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -395,64 +420,24 @@
 					{
 						"key": "x-hp-hmac-date",
 						"value": "{{timestamp}}"
+					},
+					{
+						"key": "x-hp-hmac-algorithm",
+						"value": "SHA256",
+						"type": "text"
 					}
 				],
-				"url": "{{SmsHost}}/jobs-service/jobs-sdk/propertyspecs"
-			},
-			"response": []
-		},
-		{
-			"name": "/jobs-sdk/status",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "795b51d3-e079-4d8e-aca8-7efc22e23eba",
-						"type": "text/javascript",
-						"exec": [
-							"var key = postman.getEnvironmentVariable(\"key\");",
-							"var secret = postman.getEnvironmentVariable(\"secret\");",
-							"var endpoint = \"/jobs-sdk/status\";",
-							"var headers = createHeaders (\"GET\", endpoint );",
-							"",
-							"postman.setEnvironmentVariable(\"hmacHeader\", headers[0]);",
-							"postman.setEnvironmentVariable(\"timestamp\", headers[1]);",
-							"",
-							"function createHeaders(method, path) {",
-							"    var timestamp = (new Date()).toISOString();",
-							"    ",
-							"    var toSign = method.toUpperCase() + \" \" + path + timestamp;",
-							"    console.log('Creating hash with string ', toSign);",
-							"    var hash = CryptoJS.HmacSHA1(toSign, secret);",
-							"    var sig = CryptoJS.enc.Hex.stringify(hash);",
-							"    var headers = [",
-							"      key + \":\" + sig,",
-							"      timestamp,",
-							"      \"SHA1\"",
-							"    ];",
-							"    return headers;",
-							"}"
-						]
-					}
+				"url": {
+					"raw": "{{SmsHost}}/jobs-service/jobs-sdk/propertyspecs",
+					"host": [
+						"{{SmsHost}}"
+					],
+					"path": [
+						"jobs-service",
+						"jobs-sdk",
+						"propertyspecs"
+					]
 				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "x-hp-hmac-authentication",
-						"value": "{{hmacHeader}}"
-					},
-					{
-						"key": "x-hp-hmac-date",
-						"value": "{{timestamp}}"
-					}
-				],
-				"url": "{{SmsHost}}/jobs-service/jobs-sdk/status"
 			},
 			"response": []
 		}
