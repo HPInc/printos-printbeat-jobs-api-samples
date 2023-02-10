@@ -36,7 +36,7 @@
 									"    var headers = [",
 									"      key + \":\" + sig,",
 									"      timestamp,",
-									"      \"SHA1\"",
+									"      \"SHA256\"",
 									"    ];",
 									"    return headers;",
 									"}"
